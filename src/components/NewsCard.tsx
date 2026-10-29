@@ -1,14 +1,14 @@
 import Image from "next/image";
-interface Inews{
-    id:number,
-    title:string,
-    description:string,
-    category:string,
-    imageUrl:string,
-    imageAlt:string,
-    firstPublished:string
+interface Inews {
+    id: number,
+    title: string,
+    description: string,
+    category: string,
+    imageUrl: string,
+    imageAlt: string,
+    firstPublished: string
 }
-const NewsCard = ({news}: { news: Inews }) => {
+const NewsCard = ({ news }: { news: Inews }) => {
     return (
         <div className="card bg-base-100 shadow-sm">
             <figure>
@@ -16,7 +16,7 @@ const NewsCard = ({news}: { news: Inews }) => {
                     height={500}
                     width={500}
                     src={news.imageUrl}
-                    alt={news.imageAlt}
+                    alt={news.imageAlt || news.title}
                 />
             </figure>
             <div className="card-body">
